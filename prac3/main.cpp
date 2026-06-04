@@ -67,8 +67,34 @@ int fact(int n) {
     return 0;
 }
 
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int digit_sum(int n) {
+    if (n < 0) {
+        n = -n;
+    }
+    if (n < 10) {
+        return n;
+    }
+    return (n % 10) + digit_sum(n / 10);
+}
+
 int main() {
     int choice = 0;
+    std::println("[1] Сумма и произведение цифр трёхзначного числа");
+    std::println("[2] Минуты с начала последнего часа (по секундам)");
+    std::println("[3] Перевернуть цифры числа");
+    std::println("[4] Добавить цифру справа к числу");
+    std::println("[5] Проверить, является ли число простым");
+    std::println("[6] Вычислить факториал числа");
+    std::println("[7] Найти НОД двух чисел по алгоритму Евклида");
+    std::println("[8] Сумма цифр числа без циклов");
+
     std::println("Введите Ваш выбор: ");
     std::cin >> choice;
     switch (choice) {
@@ -122,6 +148,23 @@ int main() {
         std::println("Задайте начальное значение: ");
         std::cin >> number;
         std::println("Факториал {} равен {}", number, fact(number));
+        break;
+    }
+    case 7: {
+        int a = 0;
+        std::print("Введите число a для нахождения НОД: ");
+        std::cin >> a;
+        int b = 0;
+        std::print("Введите число b для нахождения НОД: ");
+        std::cin >> b;
+        std::println("НОД({}, {}) = {}", a, b, gcd(a, b));
+        break;
+    }
+    case 8: {
+        int num = 0;
+        std::print("Введите целое число для вычисления суммы его цифр: ");
+        std::cin >> num;
+        std::println("Сумма цифр числа {} = {}", num, digit_sum(num));
         break;
     }
     default: {
