@@ -50,6 +50,13 @@ Fraction operator+(const Fraction& f1, const Fraction& f2) {
     return f3;
 }
 
+Fraction operator-(const Fraction& f1, const Fraction& f2) {
+    int numerator = f1.get_numerator() * f2.get_denominator() - f2.get_numerator() * f1.get_denominator();
+    int denominator = f1.get_denominator() * f2.get_denominator();
+    Fraction f3(numerator, denominator);
+    return f3;
+}
+
 Fraction operator*(const Fraction& f1, const Fraction& f2) {
     int numerator = f1.get_numerator() * f2.get_numerator();
     int denominator = f1.get_denominator() * f2.get_denominator();
@@ -78,9 +85,32 @@ int main() {
     std::cin >> denom2;
     Fraction f2(num2, denom2);
 
-    Fraction f3 = f1 + f2;
-    std::println("{} + {} = {}", to_string(f1), to_string(f2), to_string(f3));
-    Fraction f4 = f1 * f2;
-    std::println("{} * {} = {}", to_string(f1), to_string(f2), to_string(f4));
+    int choice = 0;
+    std::println("[1] Сложение");
+    std::println("[2] Вычитание");
+    std::println("[3] Умножение");
+
+    std::println("Введите Ваш выбор: ");
+    std::cin >> choice;
+    switch (choice) {
+    case 1: {
+        Fraction f3 = f1 + f2;
+        std::println("{} + {} = {}", to_string(f1), to_string(f2), to_string(f3));
+        break;
+    }
+    case 2: {
+        Fraction f3 = f1 - f2;
+        std::println("{} - {} = {}", to_string(f1), to_string(f2), to_string(f3));
+        break;
+    }
+    case 3: {
+        Fraction f3 = f1 * f2;
+        std::println("{} * {} = {}", to_string(f1), to_string(f2), to_string(f3));
+        break;
+    }
+    default: {
+        break;
+    }
+    }
     return 0;
 }
