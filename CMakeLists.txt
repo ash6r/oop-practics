@@ -17,4 +17,9 @@ endif()
 
 add_subdirectory("prac3")
 add_subdirectory("prac4")
-
+add_subdirectory("practice-05")
+add_subdirectory("practice-06")
+add_subdirectory("practice-07")
+add_subdirectory("practice-08")
+add_subdirectory("practice-09")
+add_subdirectory("practice-10")
