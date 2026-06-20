@@ -4,7 +4,7 @@ project("practice-09" CXX)
 
 find_package(fmt CONFIG REQUIRED)
 
-add_executable("${PROJECT_NAME}" "main.cpp")
+add_executable("${PROJECT_NAME}" "main.cpp" "fmt_printer.cpp")
 
 target_compile_features("${PROJECT_NAME}" PUBLIC cxx_std_23)
 

@@ -1,5 +1,5 @@
 import std;
-#include <fmt/core.h>
+#include "fmt_printer.h"
 
 std::string generate_password(int length, bool use_digits, bool use_symbols) {
 	std::string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,7 +36,7 @@ int main() {
 
 	std::string password = generate_password(length, use_digits, use_symbols);
 
-	fmt::print("Сгенерированный пароль: {}\n", password);
+	print_password(password.c_str());
 
 	return 0;
 }
