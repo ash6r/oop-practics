@@ -25,7 +25,7 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode({ 400, 300 }), "Password Generator");
 
 	sf::Font font;
-	if (!font.openFromFile("/System/Library/Fonts/Supplemental/Arial.ttf")) {
+	if (!font.openFromFile("C:\Windows/Fonts/Arial.ttf")) {
 		return 1;
 	}
 
